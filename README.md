@@ -11,7 +11,7 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
+![Music Recommender Simulation](image.png)
 
 ---
 
@@ -28,6 +28,27 @@ Some prompts to answer:
 - How do you choose which songs to recommend
 
 You can include a simple diagram or bullet list if helpful.
+
+Real-world reccomendation systems like Spotify build a model of your taste and use it to surface music you haven't discovered yet. They combine collaborative filtering and content-based filtering. My simulating focuses on the content-mased side, so given a user's stated prefernces, score every song by how closely its features matach, then return the top results. This approach priortizes intentionality because the user tells the system what they're in the mood for. It will reliably deliver what you asked for, and every recommendation can be explained in plain terms.
+
+### Algorithm Recipe
+
+Every song is scored out of **5.0 points** using four components:
+
+```
++2.0  if genre matches              (binary)
++1.0  if mood matches               (binary)
++1.5 × (1 − |song.energy − target_energy|)      ← closer to target = more points
++0.5 × (1 − |song.acousticness − target|)        ← closer to target = more points
+```
+
+Songs are then sorted by score and the top K are returned with an explanation.
+
+### Potential Biases
+
+- **Genre over-prioritization.** At 2.0 points, a genre match outweighs energy and acousticness combined — a mediocre song in the right genre will often beat a great song in the wrong one.
+- **Mood labels are blunt.** "Chill" and "focused" can sound nearly identical but a mismatch costs the full 1.0 point with no middle ground.
+- **No discovery.** The same preferences always return the same songs — the system can't surface music the user didn't already know to ask for.
 
 ---
 
