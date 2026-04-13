@@ -95,6 +95,26 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+### Output Screenshots
+
+**High-Energy Pop**
+![High-Energy Pop](<High-Energy.png>)
+
+**Chill Lofi**
+![Chill Lofi](<Chill Lofi.png>)
+
+**Deep Intense Rock**
+![Deep Intense Rock](<Deep Intense Rock.png>)
+
+**Conflicting: High Energy + Sad**
+![Conflicting: High Energy + Sad](<Conflicting:High Energy + Sad.png>)
+
+**No Genre or Mood Match**
+![No Genre or Mood Match](<No Genre or Mood Match.png>)
+
+**Perfectly Average**
+![Perfectly Average](<Perfectly Average.png>)
+
 ---
 
 ## Limitations and Risks
